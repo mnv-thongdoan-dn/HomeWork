@@ -5,51 +5,85 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../../images/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>CSS T-Academy</title>
 </head>
 <body>
-    <header>
-        <a href="../index.html"><img src="../../images/Logo-academy.png" alt=""></a>
-        <nav>
-            <ul>
-                <li><a href="../reactjs/reactjs.html">REACTJS</a></li>
-                <li><a href="../javascript/javascript.html">JAVASCRIPT</a></li>
-                <li><a href="../css/css.html">CSS</a></li>
-                <li><a href="../html/html.html">HTML</a></li>
-            </ul>
-        </nav>
-        <div><a href="../login/signIn.html">Sign In</a></div>
-        <div><a href="../login/signUp.html">Sign Up</a></div>
-        <div class="banner">
-            <h1>Learn basic front-end code with T-academy</h1>
-            <input type="search">
-        </div>
-    </header>
-    <aside>
-        <ol>
-            <li><a href="">Css1</a></li>
-            <li><a href="">Css2</a></li>
-            <li><a href="">Css3</a></li>
-            <li><a href="">Css4</a></li>
-        </ol>
-    </aside>
-    <main>
-           <h1>CSS...</h1>
-    </main>
-    <footer>
-        <address>
-            Written by <a href="thong.doan@monstar-lab.com">ThongDoan</a>.<br> 
-            Visit us at:...<br>
-            Example.com<br>
-            Son Tra, Da Nang<br>
-            VIETNAM
-        </address>
+  <header class="header">
+    <div class="container">
+      <a class="header--logo" href="../../pages/index.html"><img src="../../images/Logo-academy.png" alt="logo-academy" ></a>
+      <nav class="header--menu">
         <ul>
+          <li><a href="../../pages/reactjs/reactjs.html">REACTJS</a></li>
+          <li><a href="../../pages/javascript/javascript.html">JAVASCRIPT</a></li>
+          <li><a href="../../pages/css/css.html">CSS</a></li>
+          <li><a href="../../pages/html/html.html">HTML</a></li>
+        </ul>
+      </nav>
+      <div class="header--options">
+        <form action="#" class="search">
+          <input type="search">
+          <button type="submit"><i></i></button>ß
+        </form>
+        <a class="btn btn--secondary" href="../../pages/login/signIn.html">Sign In</a>
+        <a class="btn btn--secondary" href="../../pages/login/signUp.html">Sign Up</a>
+      </div>
+    </div>
+  </header>
+  <aside class="sidebar">
+    <div class="container">
+      <ol>
+        <li><a href="">css1</a></li>
+        <li><a href="">css2</a></li>
+        <li><a href="">css3</a></li>
+        <li><a href="">css4</a></li>
+      </ol>
+    </div>
+  </aside>
+  <main class="main">
+    <div class="container">
+      <article class="article">
+        <h1 class="article--title"></h1>
+        <p class="article--introduce"></p>
+        <p class="article--content"></p>
+        <ol class="related--article">
+          <li><a href="#">article1</a></li>
+          <li><a href="#">article2</a></li>
+          <li><a href="#">article3</a></li>
+          <li><a href="#">article4</a></li>
+        </ol>
+      </article>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer--options">
+        <div class="footer--subcribe">
+          <a href="../../pages/index.html" class="footer--logo"><img src="../../images/Logo-academy.png" alt="footer logo"></a>
+          <p class="subcribe--subtitle"></p>
+          <form action="#">
+            <input type="email">
+            <button type="submit" class="btn btn--secondary">Submit</button>
+          </form>
+        </div>
+        <div class="footer--contact">
+          <h3>Contact</h3>
+          <ul>
+            <li>Email: <a href="#">ngocthong494@gmail.com</a></li>
+            <li>Address: <a href="#">Da Nang - Viet Nam</a></li>
+            <li>Telephone number: <a href="#">0123456789</a></li>
+          </ul>
+        </div>
+        <div class="footer--social">
+          <ul>
             <li><a href="facebook.com"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
             <li><a href="instagram.com"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
             <li><a href="twitter.com"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-        </ul>
-        <button>Scroll to top</button>
-    </footer>
+          </ul>
+        </div>
+      </div>
+      <p class="footer--copyright">Copyright 1999-2022 by Refsnes Data. All Rights Reserved.<a href="">T-Academy blog</a> is Powered by Thong Doan</p>
+    </div>
+  </footer>
 </body>
 </html>
