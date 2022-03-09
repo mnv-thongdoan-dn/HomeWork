@@ -1,0 +1,213 @@
+/* Universal selector */
+
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  font-family: "Courier New", Courier, monospace;
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 83.33%;
+  margin: 0 auto;
+}
+
+/* Basic selector */
+
+#basic--selector--list {
+  margin: 2rem auto 0;
+  width: 500px;
+  height: 200px;
+}
+
+.basic--selector--item {
+  display: inline-block;
+  width: 49%;
+  height: 100%;
+  border: 2px solid black;
+  border-radius: 8px;
+
+  color: white;
+  font-size: 120%;
+  padding: 2rem 4px;
+}
+
+.basic--selector--item.item1 {
+  background-color: rgb(9, 97, 97);
+}
+
+.basic--selector--item.item2 {
+  background-color: rgb(23, 177, 177);
+}
+
+/* Child Selector */
+
+.header--menu {
+  color: rgb(35, 35, 211);
+}
+
+.header--menu > h1 {
+  margin: 3rem 0;
+  font-size: 250%;
+  text-align: center;
+}
+
+.header--menu > ul {
+  max-width: 90%;
+  margin: 0 auto;
+  list-style: none;
+  position: relative;
+}
+
+.header--menu > ul > li {
+  padding: 8px;
+  width: 15%;
+  display: inline-block;
+  cursor: pointer;
+
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+
+  border: 2px solid rgb(35, 35, 211);
+}
+
+.header--menu > ul > li:hover {
+  color: white;
+  background-color: rgb(35, 35, 211);
+}
+
+.header--menu ul li:hover ul {
+  display: block;
+}
+
+.header--menu > ul > li.yellow {
+  background-color: yellow;
+}
+
+.header--menu > ul > li.yellow ~ li {
+  background-color: rgb(55, 190, 14);
+}
+
+.header--menu > ul > li.yellow + li {
+  background-color: aquamarine;
+}
+
+.header--menu ul li ul {
+  display: none;
+  position: absolute;
+  width: 160.98px;
+  left: 0;
+  top: 100%;
+}
+
+.header--menu ul li ul li {
+  display: block;
+  padding: 8px;
+  cursor: pointer;
+  background-color: gray;
+  color: white;
+}
+
+.header--menu ul li ul li:hover {
+  background-color: rgb(102, 102, 102);
+}
+
+/* Text and font */
+
+.text--font {
+  padding: 2rem 3rem;
+}
+
+.text--font .title1 {
+  color: rgb(119, 27, 27);
+}
+
+.text--font .title1 h1 {
+  font-size: 250%;
+  text-align: center;
+}
+
+.text--font .title1 p {
+  text-indent: 50px;
+  line-height: 2rem;
+  text-align: justify;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.text--font > .title2 {
+  color: rgb(58, 13, 100);
+  margin-top: 2rem;
+}
+
+.text--font > .title2 h1 {
+  font-size: xx-large;
+  text-align: center;
+}
+
+.text--font > .title2 p {
+  text-align: justify;
+  line-height: 2rem;
+}
+
+.text--font > .title2 p::first-letter {
+  font-size: 200%;
+  text-decoration: underline;
+}
+
+.text--font > .title2 p::first-line {
+  color: rgb(131, 20, 235);
+  word-spacing: 10px;
+}
+
+/* pseudo classes */
+
+.pseudo--classes {
+  margin: 3rem auto;
+}
+
+.pseudo--classes a {
+  display: block;
+  color: red;
+
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+}
+
+.pseudo--classes a:visited {
+  color: palevioletred;
+}
+
+.pseudo--classes a:hover {
+  color: green;
+}
+
+.pseudo--classes a:active {
+  color: blueviolet;
+}
+
+/* pseudo element */
+
+.pseudo--element {
+  font-size: 3.5rem;
+  color: rgb(19, 177, 177);
+  text-align: center;
+  font-weight: bold;
+}
+
+.pseudo--element::after {
+  content: "😘😘😘😘😘😘😘";
+  font-size: 2.5rem;
+}
+
+.pseudo--element::before {
+  content: "😍😍😍😍😍😍😍";
+  font-size: 2.5rem;
+}
