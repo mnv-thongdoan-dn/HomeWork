@@ -1,141 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Temo</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./reset.css">
+  <link rel="stylesheet" href="./base.css">
+  <link rel="stylesheet" href="./header.css">
+  <link rel="stylesheet" href="./main.css">
+  <title>Temo</title>
 </head>
 <body>
   <header class="header">
-      <div class="container">
-        <a href="#" class="header--logo"><img src="#" alt="logo-temo"></a>
-        <nav class="header--menu">
-          <ul>
-            <li class="header--menu__multiple">Home
-              <ul>
-                <li>HomeDemo1</li>
-                <li>HomeDemo2</li>
-                <li>HomeDemo3</li>
-                <li>Page
-                  <ul>
-                    <li>pageDemo1</li>
-                    <li>pageDemo2</li>
-                    <li>pageDemo3</li>
-                    <li>pageDemo4</li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-            <li class="header--menu__multiple">Buy
-              <ul>
-                <li><a href="#"><img src="#" alt="#">BuyDemo1</a></li>
-                <li><a href="#"><img src="#" alt="#">BuyDemo2</a></li>
-                <li><a href="#"><img src="#" alt="#">BuyDemo3</a></li>
-                <li><a href="#"><img src="#" alt="#">BuyDemo4</a></li>
-              </ul>
-            </li>
-            <li class="header--menu__multiple">Sell
-              <ul>
-                <li><a href="#"><img src="#" alt="#">SellDemo1</a></li>
-                <li><a href="#"><img src="#" alt="#">SellDemo2</a></li>
-                <li><a href="#"><img src="#" alt="#">SellDemo3</a></li>
-                <li><a href="#"><img src="#" alt="#">SellDemo4</a></li>
-              </ul>
-            </li>
-            <li>Listings</li>
-            <li class="header--menu__multiple">Support
-              <ul>
-                <li><a href=""><img src="" alt="">SupportDemo1</a></li>
-                <li><a href=""><img src="" alt="">SupportDemo1</a></li>
-                <li><a href=""><img src="" alt="">SupportDemo1</a></li>
-                <li><a href=""><img src="" alt="">SupportDemo1</a></li>
-              </ul>
-            </li>
-            <li>Blog</li>
-          </ul>
-        </nav>
-        <div class="header-options">
-          <a href="#" class="header--option__login"><i></i>Login</a>
-          <a href="#" class="header--option__register btn-prime"><i></i>Register</a>
-          <select name="" id="" class="header--option__multipleLanguage">
-            <option selected>English1</option>
-            <option value="1">English2</option>
-            <option value="2">English3</option>
-            <option value="3">English4</option>
-          </select>
-        </div>
+    <div class="container-fluid">
+      <a href="../HomeWork/index.html" class="header-logo"><img src="./images/logo.png" alt="logo-temo"></a>
+      <nav class="header-nav">
+        <ul class="header-menu">
+          <li class="header-menu-multiple" >
+            <a href="">Home</a>
+            <ul>
+              <li><a href="">Home Demo - 1</a></li>
+              <li><a href="">Home Demo - 2</a></li>
+              <li><a href="">Home Demo - 3</a></li>
+              <li class="header-menu-multiple">
+               <a  href="">Page</a> 
+                <ul>
+                  <li>Trade</li>
+                  <li>Leadership Team</li>
+                  <li>Privacy Policy</li>
+                  <li>Terms & Conditions</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="header-menu-multiple" >
+            <a  href="">Buy</a>
+            <ul>
+              <li><a href="#"><img src="./images/header-image/BTC-coin.png" alt="bitcoin-image">BTC - Bitcoin</a></li>
+              <li><a href="#"><img src="./images/header-image/LiteCoin.png" alt="litecoin-image">MIT - LiteCoin</a></li>
+              <li><a href="#"><img src="./images/header-image/XRP.png" alt="ripplecoin">XRP - Ripple</a></li>
+              <li><a href="#"><img src="./images/header-image/STE.png" alt="stellarcoin">STE - Stellar</a></li>
+              <li><a href="#"><i class="fa fa-arrow-right" aria-hidden="true"></i>View All Coin</a></li>
+            </ul>
+          </li>
+          <li class="header-menu-multiple">
+            <a  href="">Sell</a>
+            <ul>
+              <li><a href="#"><img src="./images/header-image/BTC-coin.png" alt="bitcoin-image">BTC - Bitcoin</a></li>
+              <li><a href="#"><img src="./images/header-image/LiteCoin.png" alt="litecoin-image">MIT - LiteCoin</a></li>
+              <li><a href="#"><img src="./images/header-image/XRP.png" alt="ripplecoin">XRP - Ripple</a></li>
+              <li><a href="#"><img src="./images/header-image/STE.png" alt="stellarcoin">STE - Stellar</a></li>
+              <li><a href="#"><i class="fa fa-arrow-right" aria-hidden="true"></i>View All Coin</a></li>
+            </ul>
+          </li>
+          <li><a href="">Listings</a></li>
+          <li class="header-menu-multiple" >
+            <a href="">Support</a>
+            <ul>
+              <li><a href=""><i class="fa fa-info-circle" aria-hidden="true"></i>FAQ</a></li>
+              <li><a href=""><i class="fa fa-book" aria-hidden="true"></i>Guides</a></li>
+              <li><a href=""><i class="fa fa-google-wallet" aria-hidden="true"></i>Wallets</a></li>
+              <li><a href=""><i class="fa fa-users" aria-hidden="true"></i>About</a></li>
+              <li><a href=""><i class="fa fa-phone" aria-hidden="true"></i>Contact Us</a></li>
+              <li><a href=""><i class="fa fa-paper-plane-o" aria-hidden="true"></i> Affiliates</a></li>
+            </ul>
+          </li>
+          <li><a href="">Blog</a></li>
+        </ul>
+      </nav>
+      <div class="header-options">
+        <a href="#" class="header-option-login"><i class="fa fa-sign-in" aria-hidden="true"></i>Login</a>
+        <a href="#" class="header-option-register btn btn-primary"><i class="fa fa-user-o" aria-hidden="true"></i>Register</a>
+        <select name="" id="" class="header-option-multiple-language">
+          <option selected>English1</option>
+          <option value="1">English2</option>
+          <option value="2">English3</option>
+          <option value="3">English4</option>
+        </select>
       </div>
+    </div>
   </header>
   <main class="main">
     <section class="banner">
-        <div class="container">
-          <div class="banner--contents">
-            <p class="sub--title">First order and you'll get up to $10 in free BTC as a reward</p>
+        <div class="container-fluid">
+          <div class="banner-content col-5">
+            <span class="sub-title">First order and you'll get up to $10 in free BTC as a reward</span>
             <h1>A Trusted and Secure Cryptocurrency Exchange</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua consectetur adipiscing elit.</p>
             <form action="#" method="post">
               <input type="email" name="email" placeholder="Enter your email">
-              <button type="submit" class="btn-secondary">Get Started<i></i></button>
+              <button type="submit" class="btn btn-secondary">Get Started<i></i></button>
             </form>
           </div>
-          <img class="banner--image" src="#" alt="#">
+          <img class="banner--image col-7" src="./images/banner-img.png" alt="banner image">
         </div>
     </section>
     <section class="introduce">
       <div class="container">
-          <h2>The Global Leader of Social Trading</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-        <div class="introduce--contents">
-          <article class="introduce--content__item">
-            <img src="" alt="">
+          <h2 class="title-h2">The Global Leader of Social Trading</h2>
+          <p class="sub-title-h2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+        <div class="introduce-contents row">
+          <article class="introduce-content-item">
+            <img src="./images/introduce-1.png" alt="introduce1">
             <h3>Start Instantly</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipicing elit, sed do eiusmod tempor incididunt ut labore et doee magna aliqua. Ut enim ad minim veniam.</p>
           </article>
-          <article class="introduce--content__item">
-            <img src="" alt="">
+          <article class="introduce-content-item">
+            <img src="./images/introduce-2.png" alt="introduce2">
             <h3>Easy to Use</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipicing elit, sed do eiusmod tempor incididunt ut labore et doee magna aliqua. Ut enim ad minim veniam.</p>
           </article>
-          <article class="introduce--content__item">
-            <img src="" alt="">
+          <article class="introduce-content-item">
+            <img src="./images/introduce-3.png" alt="introduce3">
             <h3>Secure and Regulated</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipicing elit, sed do eiusmod tempor incididunt ut labore et doee magna aliqua. Ut enim ad minim veniam.</p>
           </article>
         </div>
       </div>
     </section>
-    <section class="sell--tokens">
+    <section class="sell-tokens row">
       <div class="container">
-        <img src="#" alt="#" class="sell--tokens__image">
-        <div class="sell--tokens__content">
-          <h2>Pre-Sale Ends In</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
-          <div class="content--countdown">
-            <ul>
-              <li><span id="days"></span>DAYS</li>
-              <li><span id="hours"></span>HOURS</li>
-              <li><span id="minutes"></span>MIN</li>
-              <li><span id="seconds"></span>SEC</li>
-            </ul>
-          </div>
-          <div class="content--tokenPrice">
-            <div class="content--tokenPrice__box"> 
+        <img src="./images/sell-token.jpg" alt="sell token image" class="sell-tokens-image col-6">
+        <div class="sell-tokens-content col-6">
+          <h2 class="title-h2">Pre-Sale Ends In</h2>
+          <p class="sub-title-h2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
+          <ul class="content-countdown">
+            <li><span id="days">1328</span>DAYS</li>
+            <li><span id="hours">09</span>HOURS</li>
+            <li><span id="minutes">43</span>MIN</li>
+            <li><span id="seconds">23</span>SEC</li>
+          </ul>
+          <div class="content-tokenPrice">
+            <div class="content-tokenPrice-box"> 
               <span>Token Price</span>
               <h3>1 ICOX=$0.08</h3>
             </div>
-            <div class="content--tokenPrice__box"> 
+            <div class="content-tokenPrice-box"> 
               <span>We Accept</span>
-              <h3><img src="" alt="">ETH</h3>
+              <h3><img src="./images/sell-token-eth-image.png" alt="eth image">ETH</h3>
             </div>
           </div>
-          <span class="content--totalPrice">Tokens Available On Pre-Sale <span>75,000,000 ICOX</span></span>
-          <div class="content--button">
-            <a href="#" class="btn-prime"><i></i>Buy token 55% off</a>
-            <a href="#" class="btn-secondary"><i></i>White Pappers</a>
+          <span class="content-totalPrice">Tokens Available On Pre-Sale <span>75,000,000 ICOX</span></span>
+          <div class="content-button">
+            <a href="#" class="btn btn-primary"><i class="fa fa-cc-discover" aria-hidden="true"></i>Buy token 55% off</a>
+            <a href="#" class="btn btn-secondary"><i class="fa fa-file-pdf-o" aria-hidden="true"></i>White Pappers</a>
           </div>
-          <img class="content--payment" src="" alt="">
+          <div class="content-payment" src="" alt="">
+            <img src="./images/payment-image.png" alt="payment image">
+            <img src="./images/payment-image2.png" alt="payment image">
+            <img src="./images/payment-image-3.png" alt="payment image">
+            <img src="./images/payment-image-4.png" alt="payment image">
+          </div>
         </div>
       </div>
     </section>
