@@ -1,0 +1,74 @@
+/*  google font */
+
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
+/* font face */
+
+@font-face {
+  font-family: BasicFont;
+  src: url("./font/Insanibu.ttf") format("ttf"),
+    url("./font/Insanibc.ttf") format("ttf"),
+    url("./font/insaniburger.txt") format("txt"),
+    url("./font/Insanibc.woff") format("woff"),
+    url("./font/Insanibu.woff") format("woff");
+  font-weight: bold;
+}
+
+/*  calc() */
+
+body {
+  max-width: calc(100% - 400px);
+  margin: 0 200px;
+}
+
+.test-font {
+  font-family: BasicFont;
+}
+
+/* attr() */
+.attr::after {
+  content: attr(href);
+  color: red;
+  margin-left: 20px;
+}
+
+/* rgb */
+
+.rgb {
+  color: rgb(255, 136, 0);
+  font-size: 40px;
+}
+
+/* rgba */
+
+.rgba {
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 50px;
+}
+
+/* linear-gradient */
+
+.linear-gradient {
+  font-size: 60px;
+  font-weight: bold;
+  background-image: linear-gradient(to right bottom, #00aefd, #bafd00);
+  color: transparent;
+  -webkit-background-clip: text;
+}
+
+/* translate */
+
+.translate {
+  width: 200px;
+  height: 200px;
+  cursor: pointer;
+  background-color: #bafd00ab;
+  transform: matrix(1, -0.3, 0, 1, 0, 0);
+}
+
+.translate:hover {
+  transform: matrix(0.8, 0, -0.3, 0.8, 400, 0);
+  transition: all 4s ease-in-out;
+}
