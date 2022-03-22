@@ -9,42 +9,49 @@
   box-shadow: 0 2px 28px 0 rgb(0 0 0 / 9%);
 }
 
-.header-logo,
-.header-nav,
-.header-options {
-  display: inline-block;
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
 }
-
-/* header logo */
-
-.header-logo {
-  line-height: 80px;
-  width: 10%;
-}
-
-.header-logo img {
-  vertical-align: middle;
-}
-
-/* header nav */
 
 .header-nav {
-  width: 63%;
-  vertical-align: middle;
-  font-size: 18px;
+  font-size: 17px;
+}
+
+.header-nav-icon {
+  display: none;
+  text-align: end;
+  cursor: pointer;
+}
+
+.header-nav-icon:hover i,
+.header-nav-icon:focus i {
+  color: blue;
+  transition: all 0.5s ease-in-out;
+}
+
+.header-nav-icon i {
+  margin-left: auto;
+  font-size: 25px;
+  color: black;
 }
 
 /* menu level 1 */
 
 .header-menu {
   position: relative;
-  text-align: end;
+  display: flex;
+  justify-content: flex-end;
+  margin-left: auto;
 }
 
 .header-menu > li {
-  display: inline-block;
   cursor: pointer;
   font-weight: 600;
+  display: flex;
+  align-items: center;
 
   margin: 0 15px;
   height: 80px;
@@ -59,7 +66,7 @@
 .header-menu .header-menu-multiple::after {
   content: "\2304";
   position: absolute;
-  top: 25%;
+  top: 34%;
   right: 0;
 }
 
@@ -161,7 +168,6 @@
 /* header options */
 
 .header-options {
-  width: 25%;
   font-size: 18px;
   line-height: 80px;
   vertical-align: middle;
@@ -204,11 +210,6 @@
   padding: 160px 0 80px;
 }
 
-.banner-content {
-  float: left;
-  padding: 120px 0;
-}
-
 .banner-content .sub-title {
   color: white;
   background-color: #00a79d;
@@ -232,7 +233,7 @@
 }
 
 .banner-content form input {
-  width: 420px;
+  width: 70%;
 }
 
 /* introduce style */
@@ -242,12 +243,11 @@
 }
 
 .introduce-contents {
+  display: flex;
   margin-top: 30px;
 }
 
 .introduce-content-item {
-  display: inline-block;
-  float: left;
   padding: 0 12px;
 }
 
@@ -279,12 +279,7 @@
 }
 
 .sell-tokens-image {
-  float: left;
   padding-right: 30px;
-}
-
-.sell-tokens-content {
-  float: left;
 }
 
 .sell-tokens-content h2,
@@ -294,9 +289,17 @@
   line-height: 30px;
 }
 
+.content-countdown {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 20px;
+}
+
 .content-countdown li {
-  display: inline-block;
-  margin: 0 20px 20px 0;
+  width: 20%;
   text-align: center;
   font-size: 18px;
   color: rgba(0, 0, 0, 0.699);
@@ -304,8 +307,6 @@
 
 .content-countdown li span {
   display: block;
-  width: 100px;
-  height: 80px;
   border: 1px solid #bdf5fb;
   border-radius: 4px;
 
@@ -321,7 +322,7 @@
   content: ":";
   font-weight: 100;
   position: absolute;
-  right: -16px;
+  right: -22px;
   top: 18px;
 }
 
@@ -330,18 +331,18 @@
 }
 
 .content-tokenPrice {
+  display: flex;
+  justify-content: space-evenly;
   background-color: rgba(128, 128, 128, 0.103);
-  width: 350px;
-  padding: 20px 20px;
+  width: 65%;
+  padding: 20px 10px;
 }
 
 .content-tokenPrice-box {
   width: 45%;
-  display: inline-block;
 }
 
 .content-tokenPrice-box:nth-child(2) {
-  float: right;
   text-align: end;
 }
 
@@ -472,12 +473,11 @@
 }
 
 .features-list {
+  display: flex;
   padding: 20px 0;
 }
 
 .features-item {
-  display: inline-block;
-  float: left;
   padding: 0 10px;
   color: black;
 }
@@ -533,7 +533,6 @@
 }
 
 .portfolio-carousel {
-  padding-top: 200px;
   color: black;
 }
 
@@ -564,33 +563,33 @@
   margin: 80px 0;
 }
 
-.tutorial--list {
+.tutorial-list {
+  display: flex;
+  flex-wrap: wrap;
   margin-top: 40px;
 }
 
-.tutorial--item {
-  display: inline-block;
-  float: left;
+.tutorial-item {
   padding: 12px;
 }
 
-.tutorial--item article {
+.tutorial-item article {
   border: 1px dashed #e5e5e5;
   border-radius: 8px;
   padding: 30px;
 }
 
-.tutorial--item article:hover {
+.tutorial-item article:hover {
   border: 1px dashed blue;
   transition: all 0.4 ease-in-out;
 }
 
-.tutorial--item article h3 {
+.tutorial-item article h3 {
   font-size: 22px;
   padding: 15px 0;
 }
 
-.tutorial--item article p {
+.tutorial-item article p {
   font-size: 16px;
   color: rgba(0, 0, 0, 0.6);
   line-height: 25px;
@@ -624,16 +623,6 @@
   height: 50px;
 }
 
-.download-image,
-.download-app {
-  display: inline-block;
-  float: left;
-}
-
-.download-app {
-  padding-top: 200px;
-}
-
 .download-app h2 {
   font-size: 35px;
   color: black;
@@ -646,11 +635,15 @@
   color: rgba(0, 0, 0, 0.6);
 }
 
+.dowload-app-content {
+  display: flex;
+  justify-content: flex-start;
+}
+
 .dowload-app-content .btn-download {
   position: relative;
   border-radius: 5px;
   margin-right: 15px;
-  display: inline-block;
 
   color: black;
   background-color: white;
@@ -692,12 +685,8 @@
 }
 
 .advisors-list {
+  display: flex;
   margin-top: 40px;
-}
-
-.advisors-item {
-  display: inline-block;
-  float: left;
 }
 
 .advisors-item article {
@@ -734,16 +723,6 @@
   padding-top: 80px;
 }
 
-.start-trading-content,
-.wrapper-image-trading {
-  display: inline-block;
-  float: left;
-}
-
-.start-trading-content {
-  padding-top: 160px;
-}
-
 .start-trading-content h2,
 .start-trading-content p {
   text-align: start;
@@ -777,12 +756,8 @@
 }
 
 .footer-list-content {
+  display: flex;
   padding-bottom: 90px;
-}
-
-.footer-item {
-  display: inline-block;
-  float: left;
 }
 
 .footer-subrcribe p {
@@ -799,11 +774,11 @@
 }
 
 .footer-subrcribe ul {
+  display: flex;
   margin-top: 20px;
 }
 
 .footer-subrcribe ul li {
-  display: inline-block;
   margin-right: 8px;
 }
 
@@ -885,4 +860,782 @@
 
 .footer .copyright a {
   color: blue;
+}
+
+@media only screen and (max-width: 1023px) {
+  /* common */
+
+  .title-h2 {
+    font-size: 30px;
+  }
+
+  .sub-title-h2 {
+    font-size: 16px;
+    padding: 20px 120px;
+  }
+
+  /* header */
+
+  .header-menu {
+    font-size: 15px;
+  }
+
+  .header-menu > li {
+    margin: 0 10px;
+  }
+
+  .header-options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 0;
+  }
+
+  .header-option-login,
+  .header-option-register,
+  .header-option-multiple-language {
+    font-size: 14px;
+  }
+
+  .header-option-register {
+    margin: 0 12px;
+  }
+
+  .header-option-register.btn {
+    padding: 5px 10px;
+  }
+
+  /* main */
+  /* banner */
+
+  .banner-content h1 {
+    font-size: 32px;
+  }
+  .banner-content form input {
+    width: 60%;
+  }
+
+  /* introduce */
+
+  .content-wraper h3 {
+    font-size: 20px;
+  }
+
+  .content-wraper p {
+    font-size: 16px;
+    line-height: 25px;
+  }
+
+  /* sell token */
+
+  .content-countdown li {
+    font-size: 16px;
+  }
+
+  .content-countdown li span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .content-countdown li span::after {
+    right: -14px;
+  }
+
+  .content-tokenPrice {
+    width: 65%;
+  }
+
+  .content-tokenPrice-box span {
+    font-size: 14px;
+  }
+
+  .content-tokenPrice-box h3 {
+    font-size: 16px;
+  }
+
+  .content-totalPrice {
+    font-size: 14px;
+  }
+
+  .content-button .btn {
+    padding: 15px 10px;
+    font-size: 14px;
+  }
+
+  /* download */
+
+  .download-app h2 {
+    font-size: 20px;
+  }
+
+  .download-app p {
+    font-size: 14px;
+    line-height: 20px;
+    padding: 20px 0;
+  }
+
+  .dowload-app-content .btn-download span {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  /* common */
+
+  .title-h2 {
+    font-size: 20px;
+  }
+
+  .sub-title-h2 {
+    font-size: 14px;
+    padding: 20px 80px;
+  }
+
+  /* header */
+  .header-nav-icon {
+    display: block;
+  }
+
+  .header-nav {
+    display: none;
+  }
+
+  /* main */
+  /* banner */
+
+  .banner-content {
+    width: 50%;
+  }
+
+  .banner-content h1 {
+    font-size: 25px;
+  }
+
+  .banner-content p {
+    font-size: 15px;
+    padding: 0 15px 0 0;
+  }
+
+  .banner-content form input {
+    width: 50%;
+  }
+
+  .banner-image {
+    width: 50%;
+  }
+
+  /* introduce */
+
+  .introduce {
+    margin: 50px 0;
+  }
+
+  .introduce-contents {
+    flex-direction: column;
+  }
+
+  .introduce-content-item {
+    width: 60%;
+    margin: 0 auto 20px;
+  }
+
+  .content-wraper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .content-wraper h3 {
+    font-size: 18px;
+  }
+
+  .content-wraper p {
+    display: -webkit-box;
+    text-align: justify;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* sell token */
+
+  .sell-tokens {
+    margin-bottom: 50px;
+  }
+
+  .sell-tokens-image {
+    width: 45%;
+    padding-right: 15px;
+  }
+
+  .sell-tokens-content {
+    width: 55%;
+  }
+
+  .sell-tokens-content h2 {
+    padding: 5px 0;
+  }
+
+  .sell-tokens-content p {
+    line-height: 20px;
+  }
+
+  .content-countdown li {
+    font-size: 14px;
+  }
+
+  .content-countdown li span {
+    width: 60px;
+    height: 40px;
+    font-size: 14px;
+  }
+
+  .content-countdown li span::after {
+    right: -9px;
+    top: 11px;
+  }
+
+  .content-tokenPrice-box h3 {
+    font-size: 14px;
+  }
+
+  .content-tokenPrice-box span {
+    font-size: 12px;
+  }
+
+  .content-totalPrice {
+    font-size: 14px;
+    margin: 15px 0;
+  }
+
+  .content-button {
+    margin: 30px 0;
+  }
+
+  /* cryptocurrencies */
+  .cryptocurrencies {
+    padding: 50px 0;
+  }
+
+  .cryptocurrencies-table {
+    margin: 20px 0;
+  }
+
+  .cryptocurrencies-table tbody tr {
+    font-size: 14px;
+  }
+
+  .cryptocurrencies-table tbody td:last-child a {
+    padding: 7px 20px;
+    font-size: 14px;
+  }
+
+  /* feature */
+  .features {
+    padding: 50px 0 20px;
+  }
+
+  .features-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .features-item {
+    width: 60%;
+    padding: 20px;
+    margin-bottom: 30px;
+
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+  }
+
+  .features-item:hover {
+    box-shadow: 0 7px 18px 0 rgb(107 124 147 / 15%);
+  }
+
+  .features-item h3 {
+    font-size: 18px;
+    padding: 5px 0;
+    text-align: center;
+  }
+
+  .features-item p {
+    display: -webkit-box;
+    text-align: justify;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  /* portfolio */
+
+  .portfolio::before {
+    height: 50px;
+  }
+
+  .portfolio::after {
+    height: 20px;
+  }
+
+  .carousel-viewport h3 {
+    font-size: 20px;
+    margin: 0;
+  }
+
+  .carousel-viewport p {
+    display: -webkit-box;
+    text-align: justify;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
+    font-size: 14px;
+    margin: 10px 0;
+  }
+
+  .portfolio-carousel .carousel-button-prev {
+    padding-right: 10px;
+  }
+
+  .carousel-button-prev,
+  .carousel-button-next {
+    font-size: 20px;
+    margin-top: 0;
+  }
+
+  /* tutorial */
+
+  .tutorial {
+    margin: 50px 0 30px;
+  }
+
+  .tutorial-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    margin-top: 0px;
+  }
+
+  .tutorial-item {
+    width: 50%;
+    padding: 12px;
+  }
+
+  .tutorial-item article h3 {
+    font-size: 16px;
+  }
+
+  .tutorial-item article p {
+    display: -webkit-box;
+    text-align: justify;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
+    font-size: 14px;
+  }
+
+  /* download */
+
+  .download::before {
+    height: 25px;
+  }
+
+  .download::after {
+    height: 20px;
+  }
+
+  .download .download-image {
+    width: 40%;
+  }
+
+  .download .download-app {
+    width: 60%;
+  }
+
+  .download-app h2 {
+    font-size: 18px;
+  }
+
+  .download-app p {
+    font-size: 14px;
+    padding: 10px 0;
+  }
+
+  .dowload-app-content .btn-download {
+    font-size: 12px;
+    padding: 10px 25px 10px 60px;
+  }
+
+  .dowload-app-content .btn-download span {
+    font-size: 12px;
+  }
+
+  /* advisors */
+
+  .advisors {
+    margin: 40px 0;
+  }
+
+  .advisors-list {
+    margin: 0;
+    flex-wrap: wrap;
+  }
+
+  .advisors-item {
+    width: 50%;
+  }
+
+  .advisors-item article h3 {
+    font-size: 16px;
+    padding: 10px 0;
+  }
+
+  .advisors-item article span {
+    font-size: 14px;
+  }
+
+  /* start-trading */
+
+  .start-trading {
+    padding-top: 40px;
+  }
+
+  .start-trading-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .start-trading-content p {
+    padding: 0;
+    margin: 20px 0;
+  }
+
+  .start-trading-content .btn-start-trading {
+    margin-top: 0px;
+    font-size: 14px;
+  }
+
+  /* footer */
+
+  .footer {
+    padding-top: 50px;
+  }
+
+  .footer-list-content {
+    flex-wrap: wrap;
+  }
+
+  .footer-subrcribe {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+  .footer-subrcribe p {
+    font-size: 15px;
+    padding: 15px 0;
+  }
+
+  .footer-cryptocurrencies,
+  .footer-resource,
+  .footer-contact {
+    width: 33.33%;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  /* common */
+
+  .title-h2 {
+    font-size: 17px;
+  }
+
+  .sub-title-h2 {
+    font-size: 14px;
+    padding: 20px 40px;
+  }
+
+  /* header */
+  .header-nav-icon {
+    width: auto;
+    margin-left: auto;
+    margin-right: 20px;
+  }
+
+  .header-option-login,
+  .header-option-register,
+  .header-option-multiple-language {
+    font-size: 16px;
+  }
+
+  /* main */
+  /* banner */
+
+  .banner {
+    padding: 100px 0 20px;
+  }
+
+  .banner-content {
+    width: 60%;
+  }
+
+  .banner-content .sub-title {
+    font-size: 12px;
+  }
+
+  .banner-content h1 {
+    font-size: 18px;
+    word-spacing: 10px;
+    margin: 15px 0;
+  }
+
+  .banner-content form {
+    margin-top: 10px;
+  }
+
+  .banner-content form input {
+    padding: 10px 20px;
+  }
+
+  .banner-content form button {
+    padding: 10px 30px;
+    font-size: 13px;
+  }
+
+  .banner-image {
+    width: 40%;
+  }
+
+  /* introduce */
+
+  .introduce {
+    margin: 30px 0;
+  }
+
+  .introduce-contents {
+    margin-top: 0;
+  }
+
+  .introduce-content-item {
+    width: 75%;
+  }
+
+  /* sell token */
+
+  .sell-tokens {
+    background-color: #f9faff;
+    padding: 25px 0 40px;
+    margin-bottom: 0;
+  }
+
+  .sell-tokens-image {
+    display: none;
+  }
+
+  .sell-tokens-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .sell-tokens-content p {
+    padding: 20px 40px;
+    text-align: center;
+  }
+
+  .content-countdown {
+    justify-content: space-evenly;
+  }
+
+  .content-countdown li span::after {
+    right: -14px;
+  }
+
+  /* cryptocurrencies */
+
+  .cryptocurrencies-table {
+    margin: 0;
+  }
+
+  .cryptocurrencies-table thead tr th:first-child,
+  .cryptocurrencies-table tbody tr td:first-child {
+    padding-left: 15px;
+  }
+
+  .cryptocurrencies-table thead tr th {
+    padding-bottom: 8px;
+    font-size: 14px;
+  }
+
+  .cryptocurrencies-table tbody tr {
+    font-size: 12px;
+  }
+
+  .cryptocurrencies-table tbody td:last-child a {
+    font-size: 11px;
+  }
+
+  .cryptocurrencies-btn {
+    margin-top: 25px;
+  }
+
+  .cryptocurrencies-btn a {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  /* feature */
+  .features {
+    padding-top: 40px;
+  }
+
+  .features-list {
+    padding: 0;
+  }
+
+  .features-item {
+    width: 75%;
+  }
+
+  .features-item h3 {
+    font-size: 15px;
+  }
+
+  .features-item p {
+    font-size: 13px;
+    line-height: 20px;
+  }
+
+  /*  portfolio */
+
+  .portfolio::before {
+    height: 30px;
+  }
+
+  .carousel-viewport p {
+    line-height: 18px;
+  }
+
+  /* tutorial */
+
+  .tutorial {
+    margin-top: 30px;
+  }
+
+  .tutorial-item {
+    width: 75%;
+  }
+
+  /* download */
+
+  .download {
+    padding-bottom: 50px;
+  }
+
+  .download::before {
+    height: 40px;
+  }
+
+  .download .wrapper {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .download .download-image {
+    width: 75%;
+  }
+
+  .download .download-app {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .download-app p {
+    padding: 10px 20px;
+    text-align: justify;
+  }
+
+  /* advisors  */
+
+  .advisors {
+    margin: 20px 0;
+  }
+
+  .advisors-list {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .advisors-item {
+    width: 75%;
+  }
+
+  /* start-trading */
+
+  .start-trading {
+    padding-top: 25px;
+  }
+
+  .start-trading-content {
+    width: 60%;
+  }
+
+  .wrapper-image-trading {
+    width: 40%;
+  }
+
+  .start-trading-content p {
+    margin: 10px 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .start-trading-content .btn-start-trading {
+    padding: 8px 10px;
+  }
+
+  /* footer */
+
+  .footer {
+    padding-top: 30px;
+  }
+
+  .footer-subrcribe a img {
+    width: 120px;
+  }
+
+  .footer-subrcribe form input {
+    padding: 12px 10px;
+  }
+
+  .footer-subrcribe form button {
+    padding: 10px 12px;
+  }
+
+  .footer-item h3 {
+    font-size: 16px;
+  }
+
+  .footer-item ul {
+    font-size: 14px;
+  }
 }
