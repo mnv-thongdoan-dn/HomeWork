@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Exercise 1</title>
+</head>
+<body>
+    <h1>Javascript</h1>
+
+    <h3>What are the differences between a variable that is: null, undefined?</h3>
+    <p>Undefined có nghĩa là không xác định, trong JS khi ta khai báo một biến nhưng không gán giá trị thì giá trị của nó sẽ là Undifined </p>
+    <p>Null có nghĩa là rổng hoặc không tồn tại, trong JS nó có thể được sử dụng để gán cho một biến làm giá trị</p>
+    <p>Thoạt nhìn, có vẻ NUll và Undefined giống nhau. Tuy nhiên, khi sử dụng phép === để so sánh undifined và null thì kết quả là false</p>
+    <p>Vì typeof của Null là object</p>
+
+    <h3>What is `use strict`? what are the advantages and disadvantages to using it?</h3>
+    <p>Use strict hay conf gọi là chế độ nghiệm ngặt. Sử dụng bằng cách khai báo Use strict ngay trên đầu mỗi file .js để giúp kiểm tra syntax chặt chẽ hơn như:</p>
+    <p>Gán giá trị cho biến chưa được khai báo</p>
+    <p>Báo lỗi khi sử dụng delete</p>
+    <p>Các tham số của hàm không được trùng nhau</p>
+    <p>Không được phép ghi đè lên thuộc tính chỉ được phép đọc...</p>
+    <p>Không chấp nhận khai báo các keyword</p>
+
+    <h3>What are the differences between `==` and `===`? Write an example for each case (if any)?</h3>
+    <p>Phép == dùng để so sánh giá trị của 2 phần tử</p>
+    <p>Phép === dùng để so sánh kiểu và giá trị của 2 phần tử</p>
+    <p>VD: var a = 1; var b = '1'. Nếu dùng == thì kết quả là true vì nó chỉ so sánh 2 giá trị của 2 phần tử và cả 2 đều có cùng kết quả là 1. Nếu dùng === thì kết quả là false vì 2 trị thuộc 2 kiểu khác nhau, biến a có kiểu dữ liệu number còn biến b có kiểu dữ liệu là string.</p>
+
+    <h3>Give a list of `Falsy` values in Javascript.</h3>
+    <ul>
+        <li>undefined</li>
+        <li>null</li>
+        <li>0</li>
+        <li>-0</li>
+        <li>on</li>
+        <li>NaN</li>
+        <li>''</li>
+    </ul>
+    <script src="./index.js"></script>
+</body>
+</html>
