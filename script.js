@@ -4,6 +4,10 @@ const MAX_SIZE = 25 * 1024 * 1024;
 let title = 'Hello World';
 title = 'Hello ES6'
 
+// Let and Const – What's the Difference?
+// Khi khai báo một biến bằng let bạn có thể không gắn giá trị nhưng với const thì bạn bắt buộc phải gắn giá trị cho nó,
+// bạn có thể gắn lại giá trị khác cho biến khai báo bằng let, còn const không thể gắn lại giá trị khác.
+
 // 2. String Interpolation
 var user = { name: 'David' };
 var card = { amount: 7, product: "Bar", unitprice: 42 };
@@ -39,23 +43,58 @@ nums.forEach((v) => {
 console.log(fives)
 
 // 6. Classes
-class Shape {
+class Move {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+  }
+}
+class Shape extends Move {
   constructor(id, x, y) {
+    super(x, y)
     this.id = id;
-    this.move(x, y);
   }
 }
 
-// var Shape = function(id, x, y) {
-//   this.id = id;
-//   this.move(x, y);
-// };
+var ex = new Shape(1, 2, 3)
+console.log(ex.x)
 
-console.log(Shape)
+// 8. Promise
+const promise1 = new Promise(function(myResolve, myReject) {
+  setTimeout(function( msg = "", who = "Foo" ) { 
+      myResolve(msg + ' Hi ' + who + '!'); 
+  }, 100);
+});
+const promise2 = new Promise(function(myResolve, myReject) {
+  setTimeout(function( msg = "", who = "Bar" ) { 
+      myResolve(msg + ' Hi ' + who + '!'); 
+  }, 200);
+});
 
-// Shape.prototype.move = function(x, y) {
-//   this.x = x;
-//   this.y = y;
-// };
+Promise.all ([ promise1, promise2 ]).then (( data ) => {
+  console.log('Finish after 300ms:' + data[0] + data[1]);
+})
 
-console.log(Shape)
+// 9. Loops
+// for of
+let arr = [
+  {id: 1, name: "thong"},
+  {id: 2, name: "thanh"},
+  {id: 3, name: "thinh"},
+]
+
+for(let i of arr){
+  console.log(i)
+}
+
+// findIndex
+
+const arrNumber = [
+  {id: 1, name: "thong"},
+  {id: 2, name: "thanh"},
+  {id: 3, name: "thinh"},
+  {id: 4, name: "thom"},
+]
+
+let indexItem = arrNumber.findIndex((item) => item.id === 4);
+console.log(indexItem)
