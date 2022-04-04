@@ -1,0 +1,1 @@
+const API_USERS = "https://624806c4229b222a3fd35ba5.mockapi.io/api/v1/users";

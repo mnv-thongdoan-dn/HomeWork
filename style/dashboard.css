@@ -1,0 +1,249 @@
+.dashboard {
+  display: flex;
+  height: 100vh;
+  overflow: scroll;
+}
+
+.side-bar {
+  width: 300px;
+  height: 100vh;
+  background-color: var(--color--primary);
+  color: var(--color--secondary);
+}
+
+.side-bar-menu {
+  padding-top: 30px;
+}
+
+.side-bar-menu li a {
+  display: block;
+  color: var(--color--secondary);
+  text-align: center;
+  padding: 15px 0;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+.side-bar-menu li a:hover,
+.side-bar-menu li a:focus {
+  background-color: var(--color--third);
+  transition: all 0.4s ease-in-out;
+}
+
+.side-bar-menu li:first-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20px;
+
+  font-size: 20px;
+  font-weight: bold;
+  border-bottom: 1px solid var(--color--secondary);
+}
+
+.side-bar-menu li:first-child img {
+  width: 150px;
+  height: 150px;
+  border: 5px solid var(--color--secondary);
+  border-radius: 50%;
+  margin-bottom: 10px;
+
+  cursor: pointer;
+}
+
+.wrapper {
+  width: 1140px;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  height: 15vh;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-left: 1px solid var(--color--secondary);
+  background-color: var(--color--primary);
+  color: var(--color--secondary);
+}
+
+.header .avatar-user {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  margin-right: 10px;
+
+  border: 2px solid var(--color--secondary);
+  vertical-align: middle;
+}
+
+.header i {
+  color: var(--color--secondary);
+  font-size: 25px;
+}
+
+.main {
+  height: 75vh;
+  background-color: var(--color--secondary);
+  color: rgba(0, 0, 0, 0.8);
+  padding: 40px;
+}
+
+.breadcrumbs {
+  text-transform: uppercase;
+  font-size: 20px;
+  letter-spacing: 1px;
+  font-weight: bold;
+  margin-bottom: 30px;
+
+  color: var(--color--primary);
+}
+
+.main-action {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 40px;
+}
+
+.main-action form {
+  margin-right: 40px;
+}
+
+.main-action .btn-search {
+  font-size: 24px;
+  padding: 5px 15px;
+  color: var(--color--primary);
+  border-radius: 6px;
+  border: 1px solid var(--color--primary);
+}
+
+.main-action .btn-search:hover,
+.main-action .btn-search:focus {
+  background-color: var(--color--primary);
+  color: var(--color--secondary);
+  transition: all 0.5s ease-in-out;
+}
+
+.main-action .input-search {
+  border: 1px solid var(--color--primary);
+  vertical-align: bottom;
+}
+
+.main-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.main-table thead {
+  display: table;
+  width: 100%;
+}
+
+.main-table thead tr {
+  font-size: 18px;
+}
+
+.main-table thead tr th {
+  width: 20%;
+}
+
+.main-table thead tr th,
+.main-table tbody tr td {
+  text-align: start;
+  padding: 15px 10px;
+  border-bottom: 1px solid var(--color--third);
+}
+
+.main-table tbody tr td:nth-child(4) {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.main-table tbody {
+  height: 350px;
+  overflow: scroll;
+  display: block;
+  width: 100%;
+}
+
+.main-table tbody tr {
+  width: 100%;
+  display: table;
+  table-layout: fixed;
+}
+
+.main-table tbody tr:hover {
+  background-color: rgba(128, 128, 128, 0.1);
+  border: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.footer {
+  border-top: 1px solid var(--color--primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+
+  font-size: 18px;
+}
+
+.footer p a {
+  color: var(--color--primary);
+}
+
+/* style create user page */
+
+.main .user-form {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.main .user-form div {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.main .user-form label {
+  width: 20%;
+  float: left;
+  font-size: 18px;
+  line-height: 38px;
+  cursor: pointer;
+}
+
+.main .user-form input {
+  width: 50%;
+  padding: 8px 16px;
+  font-size: 16px;
+  margin-bottom: 5px;
+  border: 2px solid var(--color--primary);
+}
+
+.main .user-form span {
+  padding-left: 10px;
+  color: red;
+}
+
+.main .user-form .input-err {
+  display: block;
+  transition: all 0.4s ease-in-out;
+}
+
+.main .user-form .group-button {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 30%;
+}
+
+.group-button .btn-secondary {
+  margin-right: 10px;
+}
