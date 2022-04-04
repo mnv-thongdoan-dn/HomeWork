@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../style/reset.css">
+  <link rel="stylesheet" href="../style/base.css">
+  <link rel="stylesheet" href="../style/dashboard.css">
+  <title>CRUD EXERCISE</title>
+</head>
+<body>
+  <div class="container">
+    <div class="dashboard row">
+      <aside class="side-bar">
+        <ul class="side-bar-menu">
+          <li>
+            <img src="../avatar.avif" alt="avatar">
+            <span>THONG DOAN</span>
+          </li>
+          <li><a href="">Dashboard</a></li>
+          <li><a href="">Chart</a></li>
+          <li><a href="../index.html">Users</a></li>
+          <li><a href="">Profiles</a></li>
+          <li><a href="">Project</a></li>
+        </ul>
+      </aside>
+      <div class="wrapper">
+        <header class="header">
+          <button id="icon-menu" class="header-btn-menu"><i class="fa fa-bars" aria-hidden="true"></i></button>
+          <div class="group-action-user">
+            <img class="avatar-user" src="../avatar.avif" alt="avatar">
+            <button class="btn-setting"><i class="fa fa-cogs" aria-hidden="true"></i></button>
+          </div>
+        </header>
+        <main class="main">
+          <p class="breadcrumbs">Dashboard / User / Create</p>
+          <form class="user-form" id="create-user">
+            <div>
+              <label for="fullName">Full Name:</label>
+              <input class="input" id="fullName" type="text" name="fullName" placeholder="Enter full name">
+              <span id="fullname-err" ></span>
+            </div>
+            <div>
+              <label for="age">Age:</label>
+              <input class="input" id="age" type="number" name="age" min="18" max="150" placeholder="Enter full age">
+              <span id="age-err"></span>
+            </div>
+            <div>
+              <label for="email">Email:</label>
+              <input class="input" type="email" name="email" id="email" placeholder="Enter Email">
+              <span id="email-err"></span>
+            </div>
+            <div class="group-button">
+              <button class="btn btn-secondary" type="button" id="btn-reset">Reset</button>
+              <button class="btn btn-primary"  type="submit" id="btn-create-user" disabled>Create User</button>
+            </div>
+          </form>
+        </main>
+        <footer class="footer">
+          <p>Copyright 2022 <strong>Dashboard</strong>. All Rights Reserved by <a href="">Doan Ngoc Thong</a></p>
+        </footer>
+      </div>
+    </div>
+  </div>
+  <script src="../js/api.js"></script>
+  <script src="../js/httpRequest.js"></script>
+  <script src="../js/create_user.js"></script>
+</body>
+</html>

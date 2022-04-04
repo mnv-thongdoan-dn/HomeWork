@@ -1,0 +1,115 @@
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+:root {
+  --color--primary: rgba(59, 59, 240, 0.65);
+  --color--secondary: #ffffff;
+  --color--third: rgba(59, 59, 240, 0.3);
+}
+
+body {
+  background-color: var(--color--secondary);
+}
+
+.container {
+  max-width: 1440px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.row {
+  margin: 0 -15px;
+}
+
+.row::after,
+.row::before {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* button */
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.btn-primary {
+  border: 1px solid var(--color--primary);
+  background-color: var(--color--primary);
+  color: var(--color--secondary);
+}
+
+.btn-secondary {
+  background-color: var(--color--third);
+  border: 1px solid var(--color--third);
+}
+
+.btn-edit,
+.btn-delete {
+  font-size: 13px;
+}
+
+.btn-edit {
+  background-color: rgba(0, 0, 255, 0.8);
+  border: 2px solid rgba(0, 0, 255, 0.8);
+  color: var(--color--secondary);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.btn-edit:hover,
+.btn-edit:focus {
+  color: rgba(0, 0, 255, 0.8);
+  background-color: var(--color--secondary);
+}
+
+.btn-delete {
+  background-color: rgba(255, 0, 0, 0.8);
+  border: 2px solid red;
+  color: var(--color--secondary);
+}
+
+.btn-delete:hover,
+.btn-delete:focus {
+  background-color: var(--color--secondary);
+  color: red;
+}
+
+.btn-secondary:hover,
+.btn-primary:hover {
+  background-color: var(--color--secondary);
+  color: var(--color--primary);
+}
+
+.btn-delete:hover,
+.btn-delete:focus,
+.btn-edit:hover,
+.btn-edit:focus,
+.btn-primary:hover,
+.btn-secondary:hover {
+  transition: all 0.5s ease-in-out;
+}
+/* input */
+
+.input {
+  padding: 10px;
+  margin-right: -3px;
+  border-radius: 4px;
+  font-size: 16px;
+  border: none;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.input:focus::placeholder {
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
