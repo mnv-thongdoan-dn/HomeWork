@@ -1,0 +1,257 @@
+// .page-header {
+//   @include pxRem(padding, 10);
+//   background: map-get($colors, bg-gray);
+//   text-align: center;
+// }
+
+.header {
+  height: 80px;
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.09);
+
+  &-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+  }
+
+  &-nav {
+    font-size: 17px;
+
+    &-icon {
+      display: none;
+      text-align: end;
+      cursor: pointer;
+    }
+
+    &-icon i {
+      margin-left: auto;
+      font-size: 25px;
+      color: black;
+    }
+
+    &-icon:hover i,
+    &-icon:focus i {
+      color: blue;
+      transition: all 0.5s ease-in-out;
+    }
+  }
+
+  &-menu {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    margin-left: auto;
+
+    & > li {
+      cursor: pointer;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+
+      margin: 0 15px;
+      height: 80px;
+      padding: 25px 0;
+      position: relative;
+    }
+
+    & > li > a {
+      padding: 29px 16px 29px 0;
+    }
+
+    &-multiple::after {
+      content: "\2304";
+      position: absolute;
+      top: 34%;
+      right: 0;
+    }
+
+    &-multiple:hover {
+      color: blue;
+      transition: all 0.35s ease-in-out;
+    }
+
+    // menu lv2:
+    & > li > ul {
+      display: none;
+      width: 250px;
+      text-align: start;
+
+      background-color: white;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      position: absolute;
+      top: 99%;
+    }
+
+    & li:hover > ul {
+      display: block;
+      color: black;
+    }
+
+    &-multiple > ul > li > a {
+      padding: 15px;
+      display: block;
+    }
+
+    &-multiple > ul > li::after {
+      top: 75%;
+      right: 5%;
+    }
+
+    &-multiple:first-child > ul {
+      padding: 10px 0;
+    }
+
+    &-multiple:first-child > ul > li > a {
+      padding: 0 15px 5px 15px;
+    }
+
+    &-multiple:first-child > ul > li:hover {
+      text-indent: 5px;
+      transition: all 0.5s ease-in-out;
+    }
+
+    &-multiple:nth-child(2) > ul > li,
+    &-multiple:nth-child(3) > ul > li,
+    &-multiple:nth-child(4) > ul > li {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.13);
+    }
+
+    &-multiple:nth-child(2) > ul > li:last-child,
+    &-multiple:nth-child(3) > ul > li:last-child,
+    &-multiple:nth-child(5) > ul > li:last-child {
+      border: none;
+    }
+
+    &-multiple > ul > li > a {
+      line-height: 36px;
+      display: flex;
+      align-items: center;
+    }
+
+    &-multiple > ul > li > a > img {
+      padding-right: 10px;
+    }
+
+    &-multiple > ul > li > a > i {
+      margin: 0 4px 0 10px;
+      width: 15%;
+      font-size: 25px;
+    }
+
+    // menu lv 3
+    &-multiple > ul ul {
+      display: none;
+      width: 250px;
+      background-color: white;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+      position: absolute;
+      top: 75%;
+      left: 100%;
+    }
+
+    &-multiple > ul > li:hover > ul {
+      display: block;
+    }
+
+    & > li > ul > li > ul > li > a {
+      padding: 10px 5px;
+      line-height: 25px;
+    }
+  }
+
+  &-menu li a:hover {
+    color: blue;
+    transition: all 0.35s ease-in-out;
+  }
+
+  &-option {
+    font-size: 18px;
+    line-height: 80px;
+    vertical-align: middle;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &-login {
+      color: blue;
+      display: flex;
+      align-items: center;
+
+      i {
+        margin-right: 7px;
+      }
+      &:hover {
+        color: black;
+        transition: all 0.5s ease-in-out;
+      }
+    }
+
+    &-register {
+      margin: 0 20px;
+      background-color: #00a79d;
+      i {
+        margin-right: 7px;
+      }
+    }
+
+    &-multiple-language {
+      border: none;
+      font-size: 17px;
+      cursor: pointer;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 1023px) {
+    &-menu {
+      font-size: 15px;
+
+      & > li {
+        margin: 0 10px;
+      }
+    }
+
+    &-option {
+      &-login,
+      &-register,
+      &-multiple-language {
+        font-size: 14px;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 767px) {
+    &-nav {
+      display: none;
+    }
+
+    &-nav-icon {
+      display: block;
+    }
+  }
+
+  @media only screen and (max-width: 575px) {
+    &-nav-icon {
+      width: auto;
+      margin-left: auto;
+      margin-right: 20px;
+    }
+
+    &-option-login,
+    &-option-register,
+    &-option-multiple-language {
+      font-size: 16px;
+    }
+  }
+}
