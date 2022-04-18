@@ -1,4 +1,8 @@
-import logo from '../images/logo.png'
+import logo from '../images/logo.png';
+import btc from '../images/header-image/BTC-coin.png';
+import ltc from '../images/header-image/LiteCoin.png';
+import ste from '../images/header-image/STE.png';
+import xrp from '../images/header-image/XRP.png';
 
 function Header(){
   return(
@@ -29,20 +33,20 @@ function Header(){
               <li className="header-menu-multiple" >
                 <a  href="abc.com">Buy</a>
                 <ul>
-                  <li><a href="abc.com"><img src="./images/header-image/BTC-coin.png" alt="bitcoin-image"/>BTC - Bitcoin</a></li>
-                  <li><a href="abc.com"><img src="./images/header-image/LiteCoin.png" alt="litecoin-image"/>MIT - LiteCoin</a></li>
-                  <li><a href="abc.com"><img src="./images/header-image/XRP.png" alt="ripplecoin"/>XRP - Ripple</a></li>
-                  <li><a href="abc.com"><img src="./images/header-image/STE.png" alt="stellarcoin"/>STE - Stellar</a></li>
+                  <li><a href="abc.com"><img src={btc} alt="bitcoin-image"/>BTC - Bitcoin</a></li>
+                  <li><a href="abc.com"><img src={ltc} alt="litecoin-image"/>MIT - LiteCoin</a></li>
+                  <li><a href="abc.com"><img src={ste} alt="ripplecoin"/>XRP - Ripple</a></li>
+                  <li><a href="abc.com"><img src={xrp} alt="stellarcoin"/>STE - Stellar</a></li>
                   <li><a href="abc.com"><i className="fa fa-arrow-right" aria-hidden="true"></i>View All Coin</a></li>
                 </ul>
               </li>
               <li className="header-menu-multiple">
                 <a  href="abc.com">Sell</a>
                 <ul>
-                  <li><a href="abc.com"><img src="./images/header-image/BTC-coin.png" alt="bitcoin-image"/>BTC - Bitcoin</a></li>
-                  <li><a href="abc.com"><img src="./images/header-image/LiteCoin.png" alt="litecoin-image"/>MIT - LiteCoin</a></li>
-                  <li><a href="abc.com"><img src="./images/header-image/XRP.png" alt="ripplecoin"/>XRP - Ripple</a></li>
-                  <li><a href="abc.com"><img src="./images/header-image/STE.png" alt="stellarcoin"/>STE - Stellar</a></li>
+                  <li><a href="abc.com"><img src={btc} alt="bitcoin-image"/>BTC - Bitcoin</a></li>
+                  <li><a href="abc.com"><img src={ltc} alt="litecoin-image"/>MIT - LiteCoin</a></li>
+                  <li><a href="abc.com"><img src={ste} alt="ripplecoin"/>XRP - Ripple</a></li>
+                  <li><a href="abc.com"><img src={xrp} alt="stellarcoin"/>STE - Stellar</a></li>
                   <li><a href="abc.com"><i className="fa fa-arrow-right" aria-hidden="true"></i>View All Coin</a></li>
                 </ul>
               </li>
