@@ -7,9 +7,9 @@ class Home extends Component{
 
     this.state = {
       counts: [
-        {count: 50000},
-        {count: 40000},
-        {count: 30000}
+        {count: 50000, size: 300},
+        {count: 4000, size: 230},
+        {count: 300, size: 180}
       ]
     }
   }

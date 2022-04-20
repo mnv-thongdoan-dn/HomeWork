@@ -6,6 +6,7 @@ class CountDown extends Component{
     this.state = {
       changeBtn: true,
       count: this.props.data.count,
+      size: this.props.data.size
     };
     this.changeButton = this.changeButton.bind(this);
     this.handleStop = this.handleStop.bind(this);
@@ -46,7 +47,7 @@ class CountDown extends Component{
   
   render(){
     return (
-      <div className='count-down'>
+      <div style={{width: `${this.state.size}px`}} className='count-down'>
         <div onClick={this.changeButton}  className='group-btn'>
           {
               this.state.changeBtn ?
