@@ -5,7 +5,12 @@ class Table extends Component {
     super(props)
   }
 
+	deleteItem(id) {
+		this.props.deleteUser(id)
+	}
+
   render(){
+		const {data} = this.props;
     return (
 			<table className='table-user'>
 				<thead>
@@ -20,15 +25,21 @@ class Table extends Component {
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td>1</td>
-						<td>thong@gmail.com</td>
-						<td>123123</td>
-						<td>male</td>
-						<td>Viet Nam</td>
-						<td>k34/36</td>
-						<td><button>DELETE</button></td>
-					</tr>
+					{
+						data && data.map((item, index) => {
+							return (
+								<tr key={item.id}>
+									<td>{index + 1}</td>
+									<td>{item.email}</td>
+									<td>{item.password}</td>
+									<td>{item.gender}</td>
+									<td>{item.country}</td>
+									<td>{item.info}</td>
+									<td><button onClick={() => this.deleteItem(item.id)}>DELETE</button></td>
+								</tr>
+							)
+						})
+					}
 				</tbody>
 			</table>
     );

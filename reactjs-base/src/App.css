@@ -41,11 +41,22 @@
     color: white;
 }
 
+.table-user thead tr th{
+    width: 14.28%;
+}
+
+.table-user tbody tr td:nth-child(2) {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .table-user thead tr th,
 .table-user tbody tr td{
     text-align: start;
     font-size: 1.7rem;
-    padding: 1.5rem 1rem;
+    padding: 1.5rem 0;
+    text-indent: 1rem;
 }
 
 .table-user tbody tr:nth-child(even) {
@@ -69,7 +80,6 @@
     color: brown;
     transition: all .5s ease-in-out;
 }
-
 
 .form-user {
     padding: 2rem;
@@ -115,10 +125,13 @@
     font-size: 1.8rem;
 }
 
-.form-control input[type="radio"],
-.form-control input[type="checkbox"] {
+.form-control input[type="radio"] {
     margin-left: 2rem;
     margin-right: 1rem;
+}
+
+.form-control input[type="checkbox"] {
+    margin-right: 2rem;
 }
 
 .form-control textarea {
