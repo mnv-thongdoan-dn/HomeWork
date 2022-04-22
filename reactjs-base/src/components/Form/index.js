@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 
 class Form extends Component {
-  constructor(props){
-    super(props)
+  constructor(){
+    super()
     this.state = {
       initialValue: {
         id: '',
@@ -38,7 +38,7 @@ class Form extends Component {
       alert("you do not agree to the terms")
     }
 
-    if(email.length == 0) {
+    if(email.length === 0) {
       errors.email = "Email is required !"
       isValid = false
     } else if(!regexEmail.test(email)) {
@@ -46,7 +46,7 @@ class Form extends Component {
       isValid = false
     }
 
-    if(password.length == 0) {
+    if(password.length === 0) {
       errors.password = "Password is required !"
       isValid = false
     } else if(password.length < 4) {
