@@ -13,16 +13,21 @@ class CountDown extends Component{
     this.handleStart = this.handleStart.bind(this);
   }
 
-  changeButton() {
-    this.setState({changeBtn: !this.state.changeBtn});
-  }
-
   handleStop() {
     clearInterval(this.myInterval);
   }
 
   handleStart() {
     this.doIntervalChange();
+  }
+
+  changeButton() {
+    this.setState({changeBtn: !this.state.changeBtn});
+    if(this.state.changeBtn) {
+      this.handleStop()
+    } else {
+      this.handleStart()
+    }
   }
 
   doIntervalChange = () => {
@@ -49,11 +54,7 @@ class CountDown extends Component{
     return (
       <div style={{width: `${this.state.size}px`}} className='count-down'>
         <div onClick={this.changeButton}  className='group-btn'>
-          {
-              this.state.changeBtn ?
-              <button onClick={this.handleStop}>STOP</button> :
-              <button onClick={this.handleStart}>START</button>
-            }
+          {this.state.count > 0 && <button onClick={this.handleStop}>{this.state.changeBtn ? "Stop" : "Start"}</button>}
         </div>
         <p>{this.state.count}</p>
       </div>
