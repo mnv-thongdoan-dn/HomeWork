@@ -1,25 +1,34 @@
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
+import Home from './pages/home';
+import About from './pages/about';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Hello, Thong Doan !
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor(props){
+    super(props)
+
+    this.state = {
+      togglePage: 'home',
+    }
+
+    this.menuToggle = this.menuToggle.bind(this);
+  }
+
+  menuToggle(param){
+    this.setState({togglePage: param});
+  }
+
+  render(){
+    return (
+      <div className='app'>
+        <ul className='menu'>
+          <li><a onClick={ () => this.menuToggle('home') } href='#'>Home</a></li>
+          <li><a onClick={ () =>this.menuToggle('about') } href='#'>About</a></li>
+        </ul>
+        { this.state.togglePage === 'home' ? <Home/> : <About/> }
+      </div>
+    );
+  }
 }
 
 export default App;

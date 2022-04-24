@@ -1,38 +1,96 @@
-.App {
+body{
+  background-color: rgba(255, 192, 203, 0.1);
+}
+
+.app {
+  width: 83.3%;
+  margin: 5rem auto 0;
+  padding: 30px 20px;
+  background-color: white;
+  border-radius: 20px;
+}
+
+.menu{
+  display: flex;
+  justify-content: center;
+
+  list-style: none;
+  padding: 0;
+}
+
+.menu li:last-child{
+  margin-left: 20px;
+}
+
+.menu li a{
+  display: block;
+  font-size: 25px;
+  color: blue;
+  font-weight: 600;
+  padding: 10px 20px;
+}
+
+.menu li a:hover, .menu li a:active {
+  color: brown;
+  transition: all .5s ease-in-out;
+}
+
+.menu li a::before{
+  width: 0;
+  height: 5px;
+  color: blue;
+}
+
+h1 {
   text-align: center;
+  margin: 3rem 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+.count-down{
+  border: 2px solid green;
+  border-radius: 12px;
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+}
+
+.count-down button{
+  padding: 10px 20px;
+  margin-top: 20px;
+  font-size: 17px;
+  border-radius: 6px;
+  border: none;
+
+  background-color: brown;
   color: white;
+  font-weight: 600;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.count-down button:hover, .count-down button:focus{
+  background-color: rgba(165, 42, 42, 0.8);
+  transition: all .5s ease-in-out;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.count-down p{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 60px;
+  font-size: 30px;
+  padding: 20px;
+  background-color: rgb(5, 73, 133);
+  border-radius: 50%;
+
+  text-align: center;
+  color: white;
 }
