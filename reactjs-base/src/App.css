@@ -1,38 +1,191 @@
-.App {
-  text-align: center;
+.app {
+    width: 80%;
+    margin: 5rem auto 0;
+    padding: 3rem 5rem;
+    background-color: white;
+    border-radius: 12px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.group-button {
+    display: flex;
+    justify-content: flex-end;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.group-button button{
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 1rem 1.5rem;
+    margin-bottom: 4rem;
+    border: 2px solid blue;
+    border-radius: 6px;
+
+    color: blue;
+    background-color: white;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.group-button button:hover,
+.group-button button:active {
+    color: white;
+    background-color: blue;
+    transition: all .5s ease-in-out;
 }
 
-.App-link {
-  color: #61dafb;
+.table-user {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    border: 1px solid rgba(128, 128, 128, 0.1);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.table-user thead {
+    display: table;
+    width: 100%;
+    background-color: rgba(4, 97, 7, 0.6);
+    color: white;
+}
+
+.table-user thead tr th{
+    width: 14.28%;
+}
+
+.table-user tbody tr{
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+}
+
+.table-user tbody tr td {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.table-user thead tr th,
+.table-user tbody tr td{
+    text-align: start;
+    font-size: 1.7rem;
+    padding: 1.5rem 0;
+    text-indent: 1rem;
+}
+
+.table-user tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.table-user tbody tr td button {
+    padding: 1rem 2rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+    background-color: brown;
+    border: 2px solid brown;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+}
+
+.table-user tbody tr td button:hover,
+.table-user tbody tr td button:active {
+    background-color: white;
+    color: brown;
+    transition: all .5s ease-in-out;
+}
+
+.form-user {
+    padding: 2rem;
+    background-color: rgba(128, 128, 128, 0.1);
+    border-radius: 12px;
+}
+
+.form-control{
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+}
+
+.form-control input:not([type="checkbox"]):not([type="radio"]),
+.form-control textarea,
+.form-control select {
+    display: block;
+    width: 100%;
+    margin: 1rem 0;
+}
+
+.form-control label,
+.form-control input,
+.form-control select,
+.form-control textarea{
+    font-size: 1.8rem;
+}
+
+.form-control span {
+    font-size: 1.3rem;
+    color: red;
+}
+
+.form-control input,
+.form-control select,
+.form-control textarea {
+    padding: 1rem 2rem;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+}
+
+.form-control:nth-child(4){
+    font-size: 1.8rem;
+}
+
+.form-control input[type="radio"] {
+    margin-left: 2rem;
+    margin-right: 1rem;
+}
+
+.form-control input[type="checkbox"] {
+    margin-right: 2rem;
+}
+
+.form-control textarea {
+    resize: none;
+}
+
+.form-control:last-child{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.form-control:last-child button {
+    padding: 1rem 2rem;
+    font-size: 1.7rem;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form-control:last-child button:first-child{
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+}
+
+.form-control:last-child button:first-child:hover,
+.form-control:last-child button:first-child:active {
+    background-color: black;
+    color: white;
+}
+
+.form-control:last-child button:last-child {
+    border: 2px solid green;
+    color: white;
+    background-color: green;
+    margin-left: 1rem;
+}
+
+.form-control:last-child button:last-child:hover, 
+.form-control:last-child button:last-child:focus {
+    color: green;
+    background-color: white;
+}
+
+.form-control:last-child button:first-child,
+.form-control:last-child button:last-child {
+    transition: all .5s ease-in-out;
 }
