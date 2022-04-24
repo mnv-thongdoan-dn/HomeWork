@@ -8,17 +8,12 @@ class App extends Component {
     super(props)
     this.state = {
       toggleBtn: true,
-      page: "table",
       dataTable: JSON.parse(localStorage.getItem('datas')) || [],
     }
   }
 
   changeBtn() {
     this.setState({ toggleBtn: !this.state.toggleBtn })
-  }
-
-  redirectPage(param) {
-    this.setState({ page: param})
   }
 
   getDataUser = (data) => {
@@ -44,15 +39,15 @@ class App extends Component {
         <div onClick={ () => this.changeBtn() } className='group-button'>
           {
             this.state.toggleBtn ? 
-            <button onClick={ () => this.redirectPage("create") }>Add User</button> : 
-            <button onClick={ () => this.redirectPage("table") }>Table User</button>
+            <button>Add User</button> : 
+            <button>Table User</button>
           }
         </div>
         <div className='content'>
         {
-          this.state.page === 'table' ? 
+          this.state.toggleBtn ? 
           <Table deleteUser={this.deleteUser} data={this.state.dataTable}/> :
-          <Form redirectPage={this.redirectPage} getDataUser={this.getDataUser}/>
+          <Form onChangePage={this.changeBtn} togglePage={this.toggleBtn} getDataUser={this.getDataUser}/>
         }
         </div>
       </div>
