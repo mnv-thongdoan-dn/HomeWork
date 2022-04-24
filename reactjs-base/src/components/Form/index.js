@@ -68,7 +68,7 @@ class Form extends Component {
       this.setState({formErrors: this.validate(this.state.initialValue)})
       this.props.getDataUser(this.state.initialValue)
       alert("create user success !")
-      this.props.onChangePage(!this.props.togglePage)
+      this.props.onChangePage()
     } 
     event.preventDefault();
   }

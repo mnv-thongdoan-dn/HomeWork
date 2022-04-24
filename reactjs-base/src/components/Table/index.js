@@ -1,44 +1,63 @@
 import React, {Component} from 'react';
-
+import PopupConfirm from './Confirm';
+import Item from './Item';
 class Table extends Component {
-	
-	deleteItem(id) {
-		this.props.deleteUser(id)
+	constructor(props){
+		super(props)
+		this.state = {
+			onPopupConfirm: false,
+			idUser: '',
+		}
+	}
+
+	handleOk = () => {
+		const newData = this.props.data.filter((item) => {
+			return item.id !== this.state.idUser;
+		})
+		this.props.upData(newData)
+	}
+
+	handleCancel = () => {
+		this.setState({onPopupConfirm: false})
+	}
+
+	deleteUser = (id) => {
+		this.setState({onPopupConfirm: true, idUser: id})
 	}
 
   render(){
 		const {data} = this.props;
     return (
-			<table className='table-user'>
-				<thead>
-					<tr>
-						<th>Index:</th>
-						<th>Email:</th>
-						<th>Password:</th>
-						<th>Gender:</th>
-						<th>Country:</th>
-						<th>Information:</th>
-						<th>Action:</th>
-					</tr>
-				</thead>
-				<tbody>
-					{
-						data && data.map((item, index) => {
-							return (
-								<tr key={item.id}>
-									<td>{index + 1}</td>
-									<td>{item.email}</td>
-									<td>{item.password}</td>
-									<td>{item.gender}</td>
-									<td>{item.country}</td>
-									<td>{item.info}</td>
-									<td><button onClick={() => this.deleteItem(item.id)}>DELETE</button></td>
-								</tr>
-							)
-						})
-					}
-				</tbody>
-			</table>
+			<>
+				<table className='table-user'>
+					<thead>
+						<tr>
+							<th>Index:</th>
+							<th>Email:</th>
+							<th>Password:</th>
+							<th>Gender:</th>
+							<th>Country:</th>
+							<th>Information:</th>
+							<th>Action:</th>
+						</tr>
+					</thead>
+					<tbody>
+						<Item  
+						deleteUser={this.deleteUser} 
+						data={data}
+						/>
+					</tbody>
+				</table>
+				{
+					this.state.onPopupConfirm && 
+					<PopupConfirm
+					title={"Confirm Item"}
+					content={"Do you want to delete this item?"}
+					handleOk={this.handleOk}
+					handleCancel={this.handleCancel}
+					/>
+				}
+			</>
     );
   }
 }

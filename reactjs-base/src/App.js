@@ -23,14 +23,9 @@ class App extends Component {
     this.setState({dataTable: newData})
   }
 
-  deleteUser = (id) => {
-    if(window.confirm("Are you sure you want to delete this user ?")) {
-      const newData = this.state.dataTable.filter((item) => {
-        return item.id !== id;
-      })
-      this.setState({dataTable: newData})
-      localStorage.setItem('datas', JSON.stringify(newData))
-    }
+  upDataTable = (data) => {
+    this.setState({dataTable: data})
+    localStorage.setItem("datas", JSON.stringify(data))
   }
 
   render(){
@@ -46,8 +41,8 @@ class App extends Component {
         <div className='content'>
         {
           this.state.toggleBtn ? 
-          <Table deleteUser={this.deleteUser} data={this.state.dataTable}/> :
-          <Form onChangePage={this.changeBtn} togglePage={this.toggleBtn} getDataUser={this.getDataUser}/>
+          <Table upData={this.upDataTable} data={this.state.dataTable}/> :
+          <Form onChangePage={this.changeBtn} getDataUser={this.getDataUser}/>
         }
         </div>
       </div>

@@ -189,3 +189,57 @@
 .form-control:last-child button:last-child {
     transition: all .5s ease-in-out;
 }
+
+.popup-confirm-layout {
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.popup-confirm {
+    width: 35rem;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.popup-confirm-title {
+    font-size: 2rem;
+    padding: 1.5rem 2rem;
+    font-weight: bold;
+}
+
+.popup-confirm-content {
+    padding: 4rem 2rem;
+    font-size: 1.8rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.25);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25) ;
+}
+
+.popup-confirm-footer{
+    padding: 1rem 2rem;
+    text-align: end;
+}
+
+.popup-confirm-footer button {
+    padding: 1rem 2rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.popup-confirm-footer .btn-ok {
+    background-color: blue;
+    color: white;
+    margin-left: 2rem;
+}
