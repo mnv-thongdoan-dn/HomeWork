@@ -19,6 +19,14 @@ function FormUser({getDataUser}) {
     let isValid = validateUserForm(newValue);
     if (isValid) {
       getDataUser(newValue)
+      alert(
+        `
+        Email: ${newValue.email} \n
+        FirstName: ${newValue.firstName} \n
+        LastName: ${newValue.lastName} \n
+        agree: ${newValue.agree} \n
+        `
+      )
       resetForm(initialValue)
     } 
     event.preventDefault();

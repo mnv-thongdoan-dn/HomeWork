@@ -34,7 +34,7 @@ export default function validate() {
     }
 
     if(!agree) {
-      errors.agree = "you do not agree to the terms !"
+      alert("you do not agree to the terms !")
       isValid = false
     }
 
