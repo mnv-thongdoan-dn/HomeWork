@@ -44,8 +44,19 @@
     color: white;
 }
 
-.table-user thead tr th{
-    width: 14.28%;
+.table-user thead tr th,
+.table-user tbody tr td {
+    width: 15%;
+}
+
+.table-user tbody tr td:first-child,
+.table-user thead tr th:first-child{
+    width: 10%;
+}
+
+.table-user tbody tr td:nth-child(2),
+.table-user thead tr th:nth-child(2){
+    width: 20%;
 }
 
 .table-user tbody tr{
@@ -72,6 +83,12 @@
     background-color: #f2f2f2;
 }
 
+.table-user tbody tr td img {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 6px;
+}
+
 .table-user tbody tr td button {
     padding: 1rem 2rem;
     font-size: 1.3rem;
@@ -88,6 +105,10 @@
     background-color: white;
     color: brown;
     transition: all .5s ease-in-out;
+}
+
+.isloading {
+    text-align: center;
 }
 
 .form-user {
@@ -187,5 +208,29 @@
 
 .form-control:last-child button:first-child,
 .form-control:last-child button:last-child {
+    transition: all .5s ease-in-out;
+}
+
+/* pagination */
+
+.pagination {
+    margin: 4rem auto 0;
+    text-align: center;
+}
+
+.pagination button {
+    padding: 1rem 1.5rem;
+    font-size: 1.6rem;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: white;
+
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+}
+
+.pagination .active {
+    background-color: red;
+    color: white;
     transition: all .5s ease-in-out;
 }

@@ -1,112 +1,53 @@
-import React, {Component} from 'react';
+import React from 'react';
+import fields from '../../hooks/Fields';
+import validate from '../../hooks/Validate';
 
-class Form extends Component {
-  constructor(){
-    super()
-    this.state = {
-      initialValue: {
-        id: '',
-        email: '',
-        password: '',
-        country: 'vietnam',
-        gender: 'male',
-        info: '',
-        agree: false
-      },
-      formErrors: {}
-    }
-    
-  }
+function FormUser({getDataUser}) {
+    const initialValue = {
+      email: '',
+      firstName: '',
+      lastName: '',
+      avatar: '',
+      agree: false
+    } 
 
-  handleChange = (event) => {
-    const {name, type, value, checked} = event.target;
-    const data = type === 'checkbox' ? checked : value;
-    const randomId = Math.random() * 99;
+  const {formValue, handleChange, resetForm} = fields(initialValue);
+  const {formErrors, validateUserForm} = validate();
 
-    this.setState({ 
-      initialValue: {...this.state.initialValue, [name]: data, id :randomId}
-    });
-  }
-
-  validate(){
-    const { email, password, agree } = this.state.initialValue;
-    const regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    const errors = {};
-    let isValid = true;
-
-    if(!agree) {
-      alert("you do not agree to the terms")
-    }
-
-    if(email.length === 0) {
-      errors.email = "Email is required !"
-      isValid = false
-    } else if(!regexEmail.test(email)) {
-      errors.email = "Please enter correct email !"
-      isValid = false
-    }
-
-    if(password.length === 0) {
-      errors.password = "Password is required !"
-      isValid = false
-    } else if(password.length < 4) {
-      errors.password = "Password must be longer than 4 characters"
-      isValid = false
-    } else if(password.length > 10) {
-      errors.password = "Password must be less than 10 characters"
-      isValid = false
-    }
-
-    this.setState({formErrors: errors})
-
-    return isValid;
-  }
-
-  handleSubmit = (event) => {
-    let isValid = this.validate();
+  const handleSubmit = (event) => {
+    const newValue = {...formValue};
+    let isValid = validateUserForm(newValue);
     if (isValid) {
-      this.setState({formErrors: this.validate(this.state.initialValue)})
-      this.props.getDataUser(this.state.initialValue)
-      alert("create user success !")
-      this.props.onChangePage(!this.props.togglePage)
+      getDataUser(newValue)
+      resetForm(initialValue)
     } 
     event.preventDefault();
   }
 
-  render(){
     return (
-      <form className='form-user' onSubmit={this.handleSubmit}>
+      <form className='form-user' onSubmit={handleSubmit}>
         <div className='form-control'>
           <label htmlFor='email'>Email:</label>
-          <input onChange={this.handleChange} id="email" name="email" type="text" placeholder='Email'/>
-          <span>{this.state.formErrors.email}</span>
+          <input onChange={handleChange} id="email" name="email" type="text" placeholder='Email'/>
+          <span>{formErrors.email}</span>
         </div>
         <div className='form-control'>
-          <label htmlFor='password'>Password:</label>
-          <input onChange={this.handleChange} id="password" name="password" type="password" placeholder='Password'/>
-          <span>{this.state.formErrors.password}</span>
+          <label htmlFor='firstName'>First Name:</label>
+          <input onChange={handleChange} id="firstName" name="firstName" type="text" placeholder='First Name'/>
+          <span>{formErrors.firstName}</span>
+        </div>         
+        <div className='form-control'>
+          <label htmlFor='lastName'>Last Name:</label>
+          <input onChange={handleChange} id="lastName" name="lastName" type="text" placeholder='Last Name'/>
+          <span>{formErrors.lastName}</span>
+        </div>         
+        <div className='form-control'>
+          <label htmlFor="avatar">Avatar</label>
+          <input onChange={handleChange} id="avatar" name="avatar" type="text"/>
+          <span>{formErrors.avatar}</span>
         </div>
         <div className='form-control'>
-          <label htmlFor='country'>Country:</label>
-          <select onChange={this.handleChange} defaultValue="vietnam" id="country" name="country">
-            <option value='vietnam'>Viet Nam</option>
-            <option value='japan'>Japan</option>
-            <option value='korea'>Korea</option>
-          </select>
-        </div>          
-        <div className='form-control'>
-          <label>gender:</label>
-          <input onChange={this.handleChange} defaultChecked="male" value="male" id="male" name="gender" type="radio"/>
-          <label htmlFor='male'>Male</label>
-          <input onChange={this.handleChange} value="female" id="female" name="gender" type="radio"/>
-          <label htmlFor='female'>Female</label>
-        </div>
-        <div className='form-control'>
-          <label htmlFor="info">Other information:</label>
-          <textarea onChange={this.handleChange} id="info" name="info" type="area" rows="5"/>
-        </div>
-        <div className='form-control'>
-          <input onChange={this.handleChange} id="agree" name="agree" type="checkbox"/>
+          <input onChange={handleChange} id="agree" name="agree" type="checkbox"/>
           <label htmlFor="agree">I agree to the terms</label>
         </div>
         <div className='form-control'>
@@ -115,7 +56,6 @@ class Form extends Component {
         </div>
       </form>
     );
-  }
 }
 
-export default Form;
+export default FormUser;

@@ -1,58 +1,66 @@
-import React, {Component} from 'react';
+import React from 'react'
+import {useState, useEffect} from 'react';
 import "./App.css";
-import Table from './components/Table';
+import UserList from './components/UserList';
 import Form from './components/Form';
+import HttpRequest from './HttpRequest';
 
-class App extends Component {
-  constructor(props){
-    super(props)
-    this.state = {
-      toggleBtn: true,
-      dataTable: JSON.parse(localStorage.getItem('datas')) || [],
-    }
+function App() {
+
+  const {getListUser, addUser, deleteUser} = HttpRequest();
+  const [toggleBtn, setToggleBtn] = useState(true);
+  const [dataUsers, setDataUsers] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1) ;
+  const URL = 'https://reqres.in/api/users';
+
+  useEffect(() => {
+    getListUser(`${URL}?page=${currentPage}&per_page=2`)
+    .then((users) => {setDataUsers(users)});
+  }, [currentPage]);
+
+  const changeBtn = () => {
+    setToggleBtn(!toggleBtn)
   }
 
-  changeBtn() {
-    this.setState({ toggleBtn: !this.state.toggleBtn })
+  const getDataUser = (data) => {
+    addUser(URL, data)
+    .then(res => {
+      if(res.status === 201){
+        alert(`status: ${res.status}: add user success !`)
+        setToggleBtn(!toggleBtn)
+      }
+    })
   }
 
-  getDataUser = (data) => {
-    const newData = [...this.state.dataTable]
-    newData.push(data)
-    localStorage.setItem("datas", JSON.stringify(newData))
-    this.setState({dataTable: newData})
-  }
-
-  deleteUser = (id) => {
+  const getIdUser = (id) => {
     if(window.confirm("Are you sure you want to delete this user ?")) {
-      const newData = this.state.dataTable.filter((item) => {
-        return item.id !== id;
-      })
-      this.setState({dataTable: newData})
-      localStorage.setItem('datas', JSON.stringify(newData))
+      deleteUser(URL, id)
+      .then(res => {
+        if(res.status === 204){
+          alert(`status: ${res.status} delete user success !`)
+        }
+      });
     }
   }
 
-  render(){
-    return (
-      <div className="app">
-        <div onClick={ () => this.changeBtn() } className='group-button'>
-          {
-            this.state.toggleBtn ? 
-            <button>Add User</button> : 
-            <button>Table User</button>
-          }
-        </div>
-        <div className='content'>
+  return (
+    <div className="app">
+      <div onClick={() => changeBtn()} className='group-button'>
         {
-          this.state.toggleBtn ? 
-          <Table deleteUser={this.deleteUser} data={this.state.dataTable}/> :
-          <Form onChangePage={this.changeBtn} togglePage={this.toggleBtn} getDataUser={this.getDataUser}/>
+          toggleBtn ? 
+          <button>Add User</button> : 
+          <button>Table User</button>
         }
-        </div>
       </div>
-    );
-  }
+      <div className='content'>
+      {
+        toggleBtn ? 
+        <UserList setCurrentPage={setCurrentPage} getIdUser={getIdUser} dataUsers={dataUsers}/> :
+        <Form getDataUser={getDataUser}/>
+      }
+      </div>
+    </div>
+  );
 }
 
 export default App;
