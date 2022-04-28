@@ -22,7 +22,7 @@ export default function ProductList() {
   }, [])
 
   return (
-    <div className='page-home'>
+    <div className='page-products'>
       <Header/>
       <main className='page-main'>
         <div className='product-list'>
