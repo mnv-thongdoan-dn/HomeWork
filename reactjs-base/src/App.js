@@ -1,25 +1,53 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react';
+import "./App.css";
+import TableUser from './components/TableUser';
+import FormRegisterUser from './components/FormRegisterUser';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Hello, Thong Doan !
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      toggleBtn: true,
+      dataTable: JSON.parse(localStorage.getItem('datas')) || [],
+    }
+  }
+
+  changeBtn() {
+    this.setState({ toggleBtn: !this.state.toggleBtn })
+  }
+
+  getDataUser = (data) => {
+    const newData = [...this.state.dataTable]
+    newData.push(data)
+    localStorage.setItem("datas", JSON.stringify(newData))
+    this.setState({dataTable: newData})
+  }
+
+  upDataTable = (data) => {
+    this.setState({dataTable: data})
+    localStorage.setItem("datas", JSON.stringify(data))
+  }
+
+  render(){
+    return (
+      <div className="app">
+        <div onClick={ () => this.changeBtn() } className='group-button'>
+          {
+            this.state.toggleBtn ? 
+            <button>Add User</button> : 
+            <button>Table User</button>
+          }
+        </div>
+        <div className='content'>
+        {
+          this.state.toggleBtn ? 
+          <TableUser upData={this.upDataTable} data={this.state.dataTable}/> :
+          <FormRegisterUser onChangePage={this.changeBtn} getDataUser={this.getDataUser}/>
+        }
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;
