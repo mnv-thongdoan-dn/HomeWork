@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import "./App.css";
-import Table from './components/Table';
-import Form from './components/Form';
+import TableUser from './components/TableUser';
+import FormRegisterUser from './components/FormRegisterUser';
 
 class App extends Component {
   constructor(props){
@@ -41,8 +41,8 @@ class App extends Component {
         <div className='content'>
         {
           this.state.toggleBtn ? 
-          <Table upData={this.upDataTable} data={this.state.dataTable}/> :
-          <Form onChangePage={this.changeBtn} getDataUser={this.getDataUser}/>
+          <TableUser upData={this.upDataTable} data={this.state.dataTable}/> :
+          <FormRegisterUser onChangePage={this.changeBtn} getDataUser={this.getDataUser}/>
         }
         </div>
       </div>

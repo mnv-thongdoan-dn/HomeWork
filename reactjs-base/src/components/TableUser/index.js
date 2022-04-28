@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PopupConfirm from './Confirm';
-import Item from './Item';
+import ItemUSer from './ItemUser';
 class Table extends Component {
 	constructor(props){
 		super(props)
@@ -42,10 +42,17 @@ class Table extends Component {
 						</tr>
 					</thead>
 					<tbody>
-						<Item  
-						deleteUser={this.deleteUser} 
-						data={data}
-						/>
+						{
+							data.map((item, index) => {
+								return (
+									<ItemUSer  
+									deleteUser={this.deleteUser} 
+									data={item}
+									index={index}
+									/>
+								)
+							})
+						}
 					</tbody>
 				</table>
 				{
