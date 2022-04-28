@@ -1,5 +1,32 @@
 .page-header {
   @include pxRem(padding, 10);
-  background: map-get($colors, bg-gray);
-  text-align: center;
+  background: map-get($colors, bg-gray-light);
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  position: fixed;
+  box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.1);
+
+  .header-nav {
+    @include pxRem(margin-left, 50);
+
+    &-menu {
+      @include pxRem(width, 400);
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+
+      li a {
+        @include pxRem(font-size, 20);
+        color: map-get($colors, primary);
+        font-weight: map-get($font-weight, bold);
+
+        &:hover, &:focus {
+          color: map-get( $colors, secondary );
+          transition: all .5s ease-in-out;
+        }
+      }
+    }
+  }
 }
