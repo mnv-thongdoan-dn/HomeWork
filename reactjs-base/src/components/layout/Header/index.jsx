@@ -1,8 +1,9 @@
 import React from 'react'
 import Logo from '../../../assets/images/logo.png'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 export default function Header() {
+  const user = JSON.parse(localStorage.getItem('user'));
   return (
     <div className='page-header'>
       <img src={Logo} alt="logo"></img>
@@ -15,7 +16,11 @@ export default function Header() {
             <Link to='/products'>Products</Link>
           </li>
           <li>
-            <Link to='/about'>About Us</Link>
+            {
+              user ? 
+              <Link to='/account'>Account</Link> :
+              <Link to='/login'>login</Link>
+            }
           </li>
         </ul>
       </nav>

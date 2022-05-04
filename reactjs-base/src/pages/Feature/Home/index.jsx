@@ -1,12 +1,12 @@
 import React from 'react';
-import { Header, Footer } from '../../components/layout'
+import { Header, Footer } from '../../../components/layout'
 
 export default function HomePage() {
   return (
     <div className='page-home'>
       <Header/>
       <main className='page-main'>
-        this is home page
+        <h1> This is page Home! </h1>
       </main>
       <Footer/>
     </div>

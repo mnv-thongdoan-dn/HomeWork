@@ -11,5 +11,15 @@ const getProductList = async (url) => {
   }
 }
 
-export {getProductList};
+// get item 
+const getProduct = async (url, id) => {
+  try {
+    let res = await fetch(`${url}/${id}`);
+    return res.json();
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export {getProductList, getProduct};
 

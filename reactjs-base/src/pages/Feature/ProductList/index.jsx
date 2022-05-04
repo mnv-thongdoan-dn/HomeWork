@@ -1,9 +1,9 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { Header, Footer } from '../../components/layout';
-import ProductItem from '../../components/module/ProductItem';
-import {getProductList} from '../../core/services';
-import {API_PRODUCTS} from '../../core/constants';
+import { Header, Footer } from '../../../components/layout';
+import ProductItem from '../../../components/module/ProductItem';
+import {getProductList} from '../../../core/services';
+import {API_PRODUCTS} from '../../../core/constants';
 
 export default function ProductList() {
   const [products, setProducts] = useState([]);
@@ -19,7 +19,7 @@ export default function ProductList() {
     };
 
     getProducts();
-  }, [])
+  }, []);
 
   return (
     <div className='page-products'>
