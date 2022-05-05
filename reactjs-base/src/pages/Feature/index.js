@@ -10,6 +10,9 @@ const Features = () => {
   return (
     <>
       <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
         <Route path="/product/:id">
           <ProductDetail />
         </Route>
@@ -25,9 +28,6 @@ const Features = () => {
             <Login/>
           </Route>
         }
-        <Route path="/">
-          <Home />
-        </Route>
       </Switch>
     </>
   )
