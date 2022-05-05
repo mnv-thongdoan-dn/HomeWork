@@ -27,7 +27,17 @@
       }
 
       .product-name {
+        @include pxRem(width, 200px);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
         color: map-get( $colors, primary);
+
+        cursor: pointer;
+
+        &:hover {
+          text-decoration: underline ;
+        }
       }
 
       .product-price {
